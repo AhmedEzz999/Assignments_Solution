@@ -4,10 +4,30 @@
 void main() {
   // ternary operator (condition ? trueValue : falseValue) as a shorthand for if-else statements.
   int? score;
-  bool  scoreValue = score is! Null;
+  bool  scoreValue = score != null;
   print(scoreValue ? '$score' : 'No score');
   score = 15;
-  scoreValue = score is! Null;
+  scoreValue = score != null;
   print(scoreValue ? '$score' : 'No score');
-  // 
+
+  // Using if condition
+  
+  // if (scoreValue)
+  // {
+  //   print('$score');
+  // }
+  // else
+  // {
+  //   print('No score');
+  // }
+  // score = 15;
+  // scoreValue = score != null;
+  // if (scoreValue)
+  // {
+  //   print('$score');
+  // }
+  // else
+  // {
+  //   print('No score');
+  // }
 }
