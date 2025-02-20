@@ -31,9 +31,6 @@ List<String> addGrocery(
 
 List<String> removeGrocery(
     {required List<String> grocery, required String removeItems}) {
-  if (grocery != null) {
-    grocery.remove(removeItems);
-    return grocery;
-  } else
-    return grocery;
+  grocery.remove(removeItems);
+  return grocery;
 }
