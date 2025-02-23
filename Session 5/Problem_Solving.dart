@@ -5,23 +5,24 @@
 void main() {
   List<int> nums = [1, 2, 5, 7, 10, 12, 15];
   int target = 9;
-  twoSum(nums, target);
+  print(twoSum(nums, target));
 }
 
-void twoSum (List<int> nums, int target) {
-  nums.sort();
-  for (int i = 0; nums[i] < target; i++) {
-    int firstNumber = nums[i];
-    int secondNumber = nums[i+1];
-    bool equalTarget = ((firstNumber + secondNumber) == target);
-    print(equalTarget);
-    // if (equalTarget) {
-    //   print(firstNumber);
-    //   print(secondNumber);
-    // }
+List<int> twoSum(List<int> nums, int target) {
+  List<int> result = [];
+
+  for(int i = 0; i < nums.length; i++){
+    for(int j = 0; j < nums.length; j++){
+      if(i != j){
+        if(nums[i] + nums[j] == target){
+          result.addAll([i, j]);
+          break;
+        }
+      }
+    }
+    if(result.isNotEmpty){
+      break;
+    }
   }
+  return result;
 }
-
-// Step 1: ignore all numbers equal or greater than target.
-// Step 2: add the first number to the next,
-// and if it equal to target return these two numbers.
