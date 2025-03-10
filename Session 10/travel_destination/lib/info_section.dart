@@ -5,16 +5,17 @@ class InfoSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-      padding: EdgeInsets.all(0),
+      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+      padding: EdgeInsets.only(left: 15, top: 15, right: 20),
       decoration: BoxDecoration(
         color: Color(0xfff5fcfd),
         borderRadius: BorderRadius.circular(15)
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20,bottom: 10),
+            padding: const EdgeInsets.only(bottom: 10),
             child: Row(
               children: [
                 Icon(
