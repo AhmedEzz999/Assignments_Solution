@@ -15,7 +15,7 @@ class EvenOddApp extends StatefulWidget {
 class _EvenOddAppState extends State<EvenOddApp> {
   int number = 19;
   bool isEven = false;
-  double fontSize = 30;
+  double fontSize = 40;
   MaterialColor backgroundColor = Colors.purple;
 
   @override
@@ -24,12 +24,24 @@ class _EvenOddAppState extends State<EvenOddApp> {
     isEven = number % 2 == 0;
   }
 
-  void NumberChanged (int newNumber) {
+  void numberChanged (int newNumber) {
     setState(() {
       number = newNumber;
-      isEven = (number % 2 == 0); // Update even/odd status
+      isEven = (number % 2 == 0);
     });
-}
+  }
+
+  void fontChanged (double newFontSize) {
+    setState(() {
+      fontSize = newFontSize;
+    });
+  }
+
+  void colorChanged (MaterialColor newColor) {
+    setState(() {
+      backgroundColor = newColor;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,10 +72,10 @@ class _EvenOddAppState extends State<EvenOddApp> {
               EvenOddSection(number: number, fontSize: fontSize, backgroundColor: backgroundColor),
               CounterSection(number: number, backgroundColor: backgroundColor),
               SizedBox(height: 20),
-              ChangeSizeAndColorSection(fontSize: fontSize, backgroundColor: backgroundColor),
+              ChangeSizeAndColorSection(fontSize: fontSize, backgroundColor: backgroundColor, fontChanged: fontChanged, colorChanged: colorChanged),
               SizedBox(height: 120),
-              ActionButtons(number: number, backgroundColor: backgroundColor, numberChanged: NumberChanged),
-              SizedBox(height: 100),
+              ActionButtons(number: number, backgroundColor: backgroundColor, numberChanged: numberChanged),
+              SizedBox(height: 70),
             ],
           ),
         ),

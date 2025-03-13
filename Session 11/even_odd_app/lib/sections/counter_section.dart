@@ -27,7 +27,7 @@ class _CounterSectionState extends State<CounterSection> {
         Text(
           '${widget.number}',
           style: TextStyle(
-            color: Color(0xff9e29b1),
+            color: widget.backgroundColor,
             fontSize: 50,
             fontWeight: FontWeight.w500
           ),
