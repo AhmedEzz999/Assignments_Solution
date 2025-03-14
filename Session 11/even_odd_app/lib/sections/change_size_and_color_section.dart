@@ -10,6 +10,7 @@ class ChangeSizeAndColorSection extends StatefulWidget {
     Colors.green,
     Colors.blue,
     Colors.red,
+    Colors.purple
   ];
 
   ChangeSizeAndColorSection ({
