@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/models/questions_list.dart';
-import 'package:quiz_app/widgets/question_section.dart';
+import 'package:quiz_app/widgets/buttons.dart';
+import 'package:quiz_app/widgets/question_header.dart';
+import 'package:quiz_app/widgets/question_item.dart';
 
 class QuestionView extends StatefulWidget {
   const QuestionView({super.key});
-  final int index = 0;
+
   @override
   State<QuestionView> createState() => _QuestionViewState();
 }
 
 class _QuestionViewState extends State<QuestionView> {
+  final int index = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,10 +30,11 @@ class _QuestionViewState extends State<QuestionView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 50,
-            ),
-            QuestionSection(question: questionsList[0]),
+            SizedBox(height: 70),
+            QuestionHeader(index: index),
+            QuestionItem(index: index),
+            SizedBox(height: 40),
+            Buttons()
           ],
         ),
       ),
