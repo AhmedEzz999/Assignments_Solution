@@ -1,11 +1,7 @@
-class TaskModel {
-  final String task;
-  final bool isDone;
-  final DateTime currentDate;
+class Task {
+  final String title;
+  bool isDone;
+  final DateTime createdAt;
 
-  TaskModel({
-    required this.task,
-    this.isDone = false,
-    DateTime? currentDate
-  }) : currentDate = currentDate ?? DateTime.now();
+  Task({required this.title}) : isDone = false, createdAt = DateTime.now();
 }
