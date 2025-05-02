@@ -39,10 +39,10 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF5FBF9),
+      backgroundColor: const Color(0xFFF5FBF9),
       appBar: AppBar(
-        backgroundColor: Color(0xff9ef2e3),
-        title: Text(
+        backgroundColor: const Color(0xff9ef2e3),
+        title: const Text(
           'My Tasks',
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
@@ -52,7 +52,7 @@ class _HomeViewState extends State<HomeView> {
           Expanded(
             child:
                 _tasks.isEmpty
-                    ? HomeViewEmpty()
+                    ? const HomeViewEmpty()
                     : ListView.builder(
                       padding: const EdgeInsets.all(8),
                       itemCount: _tasks.length,
@@ -63,7 +63,7 @@ class _HomeViewState extends State<HomeView> {
                             '${date.day}/${date.month}/${date.year}';
 
                         return Card(
-                          color: Color(0xFFEFF5F3),
+                          color: const Color(0xFFEFF5F3),
                           margin: const EdgeInsets.symmetric(
                             vertical: 10,
                             horizontal: 15,
@@ -72,7 +72,7 @@ class _HomeViewState extends State<HomeView> {
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             child: ListTile(
                               leading: Checkbox(
-                                activeColor: Color(0xFF006C5F),
+                                activeColor: const Color(0xFF006C5F),
                                 value: task.isDone,
                                 onChanged: (_) => _toggleDone(index),
                               ),
@@ -81,7 +81,10 @@ class _HomeViewState extends State<HomeView> {
                                 style: TextStyle(
                                   fontWeight:
                                       task.isDone ? null : FontWeight.bold,
-                                  color: task.isDone ? Color(0xFF838987) : null,
+                                  color:
+                                      task.isDone
+                                          ? const Color(0xFF838987)
+                                          : null,
                                   decoration:
                                       task.isDone
                                           ? TextDecoration.lineThrough
@@ -93,6 +96,7 @@ class _HomeViewState extends State<HomeView> {
                                 icon: const Icon(
                                   Icons.delete_outline_outlined,
                                   color: Color(0xFFE77A6E),
+                                  size: 28,
                                 ),
                                 onPressed: () => _removeTask(index),
                               ),

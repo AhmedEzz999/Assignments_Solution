@@ -5,7 +5,7 @@ class HomeViewEmpty extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(Icons.check_circle_outline, color: Color(0xffa9cfca), size: 120),

@@ -14,7 +14,7 @@ class Textfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 15, right: 10, bottom: 10, top: 10),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(color: Colors.grey, blurRadius: 15, offset: Offset(0, 5)),
         ],
@@ -41,7 +41,7 @@ class Textfield extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 0),
               elevation: 0,
               backgroundColor: const Color(0xffdee4e2),
-              shape: CircleBorder(),
+              shape: const CircleBorder(),
             ),
             onPressed: onAddTask,
             child: const Icon(Icons.add, size: 30, color: Color(0xff919795)),
