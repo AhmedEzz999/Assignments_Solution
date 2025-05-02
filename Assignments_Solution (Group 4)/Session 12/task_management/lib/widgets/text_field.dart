@@ -13,7 +13,7 @@ class Textfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 15, bottom: 10, top: 10),
+      padding: const EdgeInsets.only(left: 15, right: 10, bottom: 10, top: 10),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(color: Colors.grey, blurRadius: 15, offset: Offset(0, 5)),

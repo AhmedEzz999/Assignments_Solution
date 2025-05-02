@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_management/models/task_model.dart';
+import 'package:task_management/widgets/home_view_empty.dart';
 import 'package:task_management/widgets/text_field.dart';
 
 class HomeView extends StatefulWidget {
@@ -10,7 +11,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final _tasks = <Task>[];
+  final List<Task> _tasks = [];
   final _controller = TextEditingController();
 
   void _addTask() {
@@ -51,37 +52,12 @@ class _HomeViewState extends State<HomeView> {
           Expanded(
             child:
                 _tasks.isEmpty
-                    ? Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.check_circle_outline,
-                          color: Color(0xffa9cfca),
-                          size: 120,
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'No tasks yet',
-                          style: TextStyle(
-                            fontSize: 25,
-                            color: Color(0xff6f7573),
-                          ),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'Add a task to get started',
-                          style: TextStyle(
-                            fontSize: 25,
-                            color: Color(0xff949a98),
-                          ),
-                        ),
-                      ],
-                    )
+                    ? HomeViewEmpty()
                     : ListView.builder(
                       padding: const EdgeInsets.all(8),
                       itemCount: _tasks.length,
-                      itemBuilder: (context, i) {
-                        final task = _tasks[i];
+                      itemBuilder: (context, index) {
+                        final task = _tasks[index];
                         final date = task.createdAt;
                         final formattedDate =
                             '${date.day}/${date.month}/${date.year}';
@@ -98,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
                               leading: Checkbox(
                                 activeColor: Color(0xFF006C5F),
                                 value: task.isDone,
-                                onChanged: (_) => _toggleDone(i),
+                                onChanged: (_) => _toggleDone(index),
                               ),
                               title: Text(
                                 task.title,
@@ -118,7 +94,7 @@ class _HomeViewState extends State<HomeView> {
                                   Icons.delete_outline_outlined,
                                   color: Color(0xFFE77A6E),
                                 ),
-                                onPressed: () => _removeTask(i),
+                                onPressed: () => _removeTask(index),
                               ),
                             ),
                           ),
